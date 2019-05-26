@@ -3,6 +3,8 @@
 var express = require("express");
 var path = require("path");
 var qs = require("./app/data/questions");
+var swal = require("sweetalert2")
+var friendlies = require("./app/data/friends");
 
 // Sets up the Express App
 // =============================================================
@@ -28,7 +30,18 @@ app.get("/", function (req, res) {
 
   })
 
+  app.get("/api/getallscores", function(req, res){
+ 
+    return res.json(friendlies);
 
+  })
+
+  app.post("/api/postNewFriend", function(req, res){
+    var newFriend = req.body;
+    // console.log(friendlies);
+    friendlies.friends.push(newFriend);
+    res.json({result: 200});
+  })
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
