@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/brnunn00/friendFinder#readme",
   "dependencies": {
-    "express": "^4.17.0",
+    "express": "^4.17.3",
     "sweetalert2": "^8.11.6"
   }
 }
